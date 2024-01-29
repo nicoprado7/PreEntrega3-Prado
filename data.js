@@ -1,5 +1,5 @@
 const products = [
-    { id: 1, name: 'GORRO NEGRO', img: './assets/foto eminem posando.jpg', price: 10000, category: 'gorros'},
+    { id: 1, name: 'GORRO NEGRO', img: 'assets/merchandising/merchandising.png', price: 10000, category: 'gorros'},
     { id: 2, name: 'GORRO NARANJA', img: 'assets/merchandising/merchandising1.png', price: 10000, category: 'gorros'},
     { id: 3, name: 'CONJUNTO KAMIKAZE', img: 'assets/merchandising/merchandising2.png', price: 75000, category: 'conjuntos'},
     { id: 4, name: 'CONJUNTO BEIGE III', img: 'assets/merchandising/merchandising3.png', price: 75000, category: 'conjuntos'},
