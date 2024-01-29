@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- TÉCNICAS DE SEO -->
+    <meta name="keywords" content="música,rap,eminem,show">
+    <meta name="description" content="Explora nuestra tienda con merchandising exclusivo de Eminem. Desde camisetas hasta accesorios, lleva contigo el espíritu de Shady y muestra tu apoyo a este maestro de las rimas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- LOGO EN PESTAÑA -->
+     <link rel="shortcut icon" href="./assets/eminem logo pestaña.ico" type="image/ico">
+     <!-- BOOTSTRAP CSS -->
+     <link rel="stylesheet" href="./css/bootstrap.css">
+     <!-- CUSTOM CSS -->
+     <link rel="stylesheet" href="./css/styles.css">
+     <link rel="stylesheet" href="./css/grid.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+         <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+     
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+ <!--    <link rel="stylesheet" href="styles1.css"> -->
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-png">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="data.js" defer></script>
+    <script src="Cart.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <title>SHOP</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <!-- COMIENZO PAGINA -->
+    <h1 class="shopOficial">Shop oficial</h1>
+    
+    <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="./assets/eminem logo.png" width="60" alt="eminemlogo">
+            </div>
+        </div>
+    </nav>
+
+
+<!-- ------------------------- COMIENZO DE PAGINA -------------------------- -->
+
+<header class="d-flex justify-content-between p-4">
+
+    <p class="textoPagina animate__animated animate__bounceInLeft">Aquí encontrarás todo tipo de merchandising de Eminem, desde camisetas y buzos,
+        hasta gorros y conjuntos originales que te dejarán alucinando. En nuestra tienda encontrarás todo lo que
+        siempre has querido de tu artista favorito. Y si lo que buscas es hacer un regalo para un fan de Eminem,
+        te vamos a dar un montón de ideas. Date el gusto de obtener la vestimenta que te representa, en su
+        variedad de colores y diseños. El problema será elegir cuál te gusta más!</p>
+  
+   
+</header>
+ 
+ <!-- ------------------------------- CARRITO ------------------------------- -->
+ 
+ <button id="btnModalCarrito" type="button" class="btn btn-danger"> <!-- CARRITO -->
+    <i class="fa-solid fa-cart-shopping "></i>
+    <span id="cartCount" class="badge text-bg-secondary">0</span>
+</button>
+    
+
+    <!-- ---------------------------- FILTROS ---------------------------- -->
+
+    <div class="row ">
+        <div class="col-md-2 ">
+            <input id="inputSearch" type="search" class="form-control" placeholder="🔎Buscar...">
+        </div>
+        <div class="col-md-2">
+            <select id="selectCategory" class="form-control">
+                <option value="" disabled selected style="display:none;">Filtrar por...⬇️</option>
+                <option value="todos" selected>Todos</option>
+                <option value="remeras">Remeras</option>
+                <option value="buzos">Buzos</option>
+                <option value="gorros">Gorros</option>
+                <option value="conjuntos">Conjuntos</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button id="btnOrder" type="button" class="btn btn-danger">
+                <i class="fa-solid fa-arrow-down-1-9"></i>
+            </button>
+        </div>
+        
+        </div>
+            <div id="listProducts" class="row mt-3">
+            </div>
+            
+    <!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
+    <div id="modalCarrito" class="modal fade " tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i> Detalle de compra </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="modalListProducts">
+
+                        </tbody>
+                    
+                    </table>
+                    <hr>
+                    <p class="text-total"> TOTAL = $<span id="cartSum"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnClose" type="button" class="btn btn-secondary">Cerrar</button>
+                    <button id="btnSave"  type="submit" class="btn btn-danger">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row align-items-center" style="margin-bottom: 20px;">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+            <img src="./assets/foto eminem posando.jpg" class="img-fluid" alt="eminem posando" style="margin-bottom: 20px; border-radius: 25px;">
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
+            <p class="textoabajo">Descubrí la combinación perfecta de estilo y comodidad para alcanzar tus metas.
+                Cada prenda de la línea está diseñada para que te acompañe en todas tu actividades y también para que
+                la combines con tus favoritos más urbanos. Generá movimiento en tus looks, crea tu vestimenta
+                y disfrutá del camino hacia una vida con mas personalidad. </p>
+            <p>
+        </div>
+    </div>
+
+<!-- --------------------------- BOTON IR ARRIBA --------------------------- -->
+<a href="#" class="btn btn-warning">Ir Arriba</a>
+
+
+</div>
+<!-- ------------------------------- FOOTER -------------------------------- -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-row">
+
+            <div class="footer-links">
+                <div class="social-link">
+                    <a href="https://www.facebook.com/eminem/?locale=es_LA " target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/eminem/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/Eminem?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                        target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCfM3zsQsOnfWNUppiycmBuw" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- ---------------------------- BOOTSTRAP JS ----------------------------- -->
+<script src="./js/bootstrap.js"></script>
+</body>
+</html>
