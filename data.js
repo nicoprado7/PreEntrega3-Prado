@@ -1,8 +1,8 @@
 const products = [
-    { id: 1, name: 'GORRO NEGRO', img: './assets/merchandising/merchandising.png', price: 10000, category: 'gorros'},
+    { id: 1, name: 'GORRO NEGRO', img: 'assets/merchandising/merchandising.png', price: 10000, category: 'gorros'},
     { id: 2, name: 'GORRO NARANJA', img: 'assets/merchandising/merchandising1.png', price: 10000, category: 'gorros'},
     { id: 3, name: 'CONJUNTO KAMIKAZE', img: 'assets/merchandising/merchandising2.png', price: 75000, category: 'conjuntos'},
-    { id: 4, name: 'CONJUNTO BEIGE III', img: './assets/merchandising/merchandising3.png', price: 75000, category: 'conjuntos'},
+    { id: 4, name: 'CONJUNTO BEIGE III', img: 'assets/merchandising/merchandising3.png', price: 75000, category: 'conjuntos'},
     { id: 5, name: 'REMERA BLACK KAMIKAZE', img: 'assets/merchandising/merchandising4.png', price: 25000, category: 'remeras'},
     { id: 6, name: 'REMERA BLACK', img: 'assets/merchandising/merchandising5.png', price: 25000, category: 'remeras'},
     { id: 7, name: 'REMERA BLACKBLUE', img: 'assets/merchandising/merchandising6.png', price: 25000, category: 'remeras'},
