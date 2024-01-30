@@ -6,7 +6,7 @@ class cart {
 
     addToCart( {id, name, img, price} ){
 
-/* ---------------------- BUSCAR SI EXISTE EL PRODUCTO ---------------------- */
+        //BUSCAR SI EXISTE EL PRODUCTO 
         const index = this.cart.findIndex(  product => product.id == id );
         if( index == -1){
             this.cart.push( {id, name, price, units: 1} );
