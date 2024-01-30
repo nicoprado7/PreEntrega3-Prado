@@ -11,7 +11,7 @@ const btnSave = document.querySelector('#btnSave');
 const btnOrder = document.querySelector('#btnOrder');
 
 const listCart = JSON.parse( localStorage.getItem('cart') ) || [];
-const cart = new Cart(listCart);
+const cart = new cart(listCart);
 
 cartCount.innerText = cart.getCount();
 
