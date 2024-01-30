@@ -1,4 +1,4 @@
-const modal = new bootstrap.Modal('#modalCarrito', {});
+const modal = new bootstrap.Modal('#modalCarri', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const cartCount = document.querySelector('#cartCount');
 const cartSum = document.querySelector('#cartSum');
