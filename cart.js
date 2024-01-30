@@ -1,4 +1,4 @@
-class Cart {
+class cart {
     constructor( list = [] ){
         this.cart = list;
         console.log('Inicio del programa')
