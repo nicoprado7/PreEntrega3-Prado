@@ -58,7 +58,7 @@ const renderProducts = (list, categoryFilter = null) => {
                     <h4>${product.name}</h4>
                     <img class="img-fluid" src="${product.img}" alt="${product.name}">
                     <h3 class="text-center">$${product.price}</h3>
-                    <button id="${product.id}" type="button" class="btn btn-primary btnAddCart">
+                    <button id="${product.id}" type="button" class="btn btn-danger btnAddCart">
                         <i class="fa-solid fa-cart-plus"></i> Agregar
                     </button>
                 </div>
@@ -96,7 +96,7 @@ const redenCart = (list) => {
                 <td>${product.units}</td>
                 <td>$${product.price}</td>
                 <td>$${product.price * product.units}</td>
-                <td><button class="btn btn-danger btnRemoveItem" data-id="${product.id}">Eliminar</button></td>
+                <td><button class="btn btn-dark btnRemoveItem" data-id="${product.id}">Eliminar</button></td>
             </tr>`;
     });
 
