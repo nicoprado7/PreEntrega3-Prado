@@ -1,7 +1,7 @@
 class Cart {
     constructor(list = []) {
         this.cart = list;
-        console.log('Inicio del programa');
+        console.log('¡Bienvenido!');
     }
 
     addToCart({ id, name, img, price }) {
@@ -33,5 +33,10 @@ class Cart {
 
     getSum() {
         return this.cart.reduce((sum, product) => sum + (product.units * product.price), 0);
+    }
+
+    clearCart() {
+        this.cart = []; // Elimina todos los productos del carrito
+        localStorage.removeItem('cart'); // Elimina el carrito del almacenamiento local si lo usas
     }
 }

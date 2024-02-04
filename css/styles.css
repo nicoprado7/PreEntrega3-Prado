@@ -53,12 +53,16 @@ p {
 }
 
 
+.fa-solid.fa-sort {
+  font-size: 15px; 
+}
+
 /* ---------------------------------- SHOP ---------------------------------- */
 /* ---------------------------------- CARDS --------------------------------- */
 div.row{
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 .card:hover {
   opacity: 0.9;
@@ -99,6 +103,11 @@ div.row{
   text-align: center;
   color: rgb(160, 0, 0);
   font-weight: bold;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .modal-close {
@@ -124,6 +133,9 @@ div.row{
   margin-left: 50px;
 }
 
+.center-text {
+  text-align: center;
+}
 
 /* --------------------------------- fOOTER --------------------------------- */
 .footer {
@@ -170,5 +182,4 @@ div.row{
   transition: all 0.5s;
   color: black;
 }
-
 

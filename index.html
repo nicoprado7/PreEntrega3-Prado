@@ -14,8 +14,16 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
          <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+     <!-- ------------------------------ LIBRERIA SWEETALERT------------------------------- -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <!-- -------------------------- LIBRERIA TOASTYFY -------------------------- -->
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     <!-- -------------------------------- LUXON -------------------------------- -->
+     <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
      
-     
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
@@ -59,40 +67,43 @@
    
 </header>
  
- <!-- ------------------------------- CARRITO ------------------------------- -->
- 
- <button id="btnModalCarrito" type="button" class="btn btn-danger"> <!-- CARRITO -->
-    <i class="fa-solid fa-cart-shopping "></i>
-    <span id="cartCount" class="badge text-bg-secondary">0</span>
-</button>
-    
 
     <!-- ---------------------------- FILTROS ---------------------------- -->
-
-    <div class="row ">
-        <div class="col-md-2 ">
+    <div class="row">
+        <div class="col-md-2">
             <input id="inputSearch" type="search" class="form-control" placeholder="🔎Buscar...">
         </div>
         <div class="col-md-2">
-            <select id="selectCategory" class="form-control">
-                <option value="" disabled selected style="display:none;">Filtrar por...⬇️</option>
-                <option value="todos" selected>Todos</option>
+            <select id="selectCategory" class="form-control" placeholder="Filtrar por...">
+                <option value="" disabled selected>Filtrar por... ⬇️</option>
+                <option value="todos">Todos</option>
                 <option value="remeras">Remeras</option>
                 <option value="buzos">Buzos</option>
                 <option value="gorros">Gorros</option>
                 <option value="conjuntos">Conjuntos</option>
             </select>
         </div>
-
         <div class="col-md-2">
-            <button id="btnOrder" type="button" class="btn btn-danger">
-                <i class="fa-solid fa-arrow-down-1-9"></i>
+            <button id="btnOrder" type="button" class="btn btn-warning">
+                <i class="fa-solid fa-sort"></i>
+                <span>Ordenar por precio</span>
             </button>
-        </div>
+             <!-- ------------------------------- CARRITO ------------------------------- -->
+ 
+     <button id="btnModalCarrito" type="button" class="btn btn-danger mt-5"> <!-- CARRITO -->
+        <i class="fa-solid fa-cart-shopping fa-lg"></i> <!-- Agrega la clase "fa-lg" para aumentar el tamaño del ícono -->
+        <span id="cartCount" class="badge text-bg-secondary fs-5">0</span> <!-- Agrega la clase "fs-5" para aumentar el tamaño del texto -->
+    </button>
+    
+        </div>|
         
-        </div>
-            <div id="listProducts" class="row mt-3">
-            </div>
+    </div>
+    
+        
+
+    <div id="listProducts" class="row">
+    </div>
+
             
     <!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
     <div id="modalCarri" class="modal fade " tabindex="-1">
@@ -119,7 +130,10 @@
                     
                     </table>
                     <hr>
-                    <p class="text-total"> TOTAL = $<span id="cartSum"></span></p>
+                    <p class="text-total">
+                        <span>TOTAL =</span>
+                        <span>$<span id="cartSum"></span></span>
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button id="btnClose" type="button" class="btn btn-secondary">Cerrar</button>
@@ -143,7 +157,7 @@
     </div>
 
 <!-- --------------------------- BOTON IR ARRIBA --------------------------- -->
-<a href="#" class="btn btn-warning">Ir Arriba</a>
+<a href="#" class="btn btn-warning">Ir Arriba <i class="fa-solid fa-turn-up"></i></a>
 
 
 </div>
@@ -168,9 +182,5 @@
         </div>
     </div>
 </footer>
-
-
-
-
 </body>
 </html>
