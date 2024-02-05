@@ -1,9 +1,19 @@
+const productos = [];
+
+fetch("./productos.json")
+    .then(response => response.json())
+    .then(data => {
+        products = data;
+        renderProducts(products);
+    })
+
+
 const modal = new bootstrap.Modal('#modalCarri', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const cartCount = document.querySelector('#cartCount');
 const cartSum = document.querySelector('#cartSum');
 const inputSearch = document.querySelector('#inputSearch');
-const listProducts = document.querySelector('#listProducts');
+const listProductsElement = document.querySelector('#listProducts');
 const selectCategory = document.querySelector('#selectCategory');
 const modalListProducts = document.querySelector('#modalListProducts');
 const btnClose = document.querySelector('#btnClose');
@@ -24,9 +34,9 @@ btnModalCarrito.addEventListener('click', function () {
     if (list.length === 0) {
         // Mostrar un mensaje de error
         Swal.fire({
-            title: 'Error',
-            text: 'El carrito está vacío. Por favor, agregue productos antes de realizar una compra.',
-            icon: 'error',
+            title: 'Carrito Vacio 😥',
+            text: 'Por favor, agregue productos antes de realizar una compra.',
+            icon: 'info',
             confirmButtonColor: "#198754"
         });
     } else {
@@ -127,7 +137,7 @@ const addToCart = (e) => {
         gravity: "bottom",
         duration: 3000,
         style: {
-            background: "linear-gradient(to right,red, black)",
+            background: "linear-gradient(to right,green, green)",
           },
         
         }).showToast();
@@ -198,8 +208,8 @@ const removeFromCart = (e) => {
 };
 
 
-renderProducts(products);
-
+/* renderProducts(products);
+ */
 
 /* ----------------------------- LUXON ---------------------------- */
 const f = new Date();

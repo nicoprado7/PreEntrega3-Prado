@@ -31,18 +31,16 @@
     <link rel="shortcut icon" href="images/icon.png" type="image/x-png">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="data.js" defer></script>
+<!--     <script src="data.js" defer></script> -->
     <script src="cart.js" defer></script>
     <script src="index.js" defer></script>
-    <script src="script.js" defer></script>
-
     <title>SHOP</title>
 </head>
 <body>
 
 
 
-    <h1 class="shopOficial">Shop oficial</h1>
+    <h1 class="shopOficial ">Shop oficial</h1>
     
 <!-- ------------------------- BARRA DE NAVEGACION ------------------------- -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -86,17 +84,17 @@
         <div class="col-md-2">
             <button id="btnOrder" type="button" class="btn btn-warning animate__animated animate__bounceInLeft">
                 <i class="fa-solid fa-sort"></i>
-                <span>Ordenar por precio</span>
+                <span>Precio</span>
             </button>
-             <!-- ------------------------------- CARRITO ------------------------------- -->
+
+                     <!-- ------------------------------- CARRITO ------------------------------- -->
  
-     <button id="btnModalCarrito" type="button" class="btn btn-danger mt-5 animate__animated animate__bounceInLeft"> <!-- CARRITO -->
+     <button id="btnModalCarrito" type="button" class="btn btn-danger animate__animated animate__bounceInLeft"> <!-- CARRITO -->
         <i class="fa-solid fa-cart-shopping fa-xl"></i> <!-- Agrega la clase "fa-lg" para aumentar el tamaño del ícono -->
-        <span id="cartCount" class="badge text-bg-secondary fs-6">0</span> <!-- Agrega la clase "fs-5" para aumentar el tamaño del texto -->
+        <span id="cartCount" class="badge text-bg-secondary fs-5">0</span> <!-- Agrega la clase "fs-5" para aumentar el tamaño del texto -->
     </button>
     
         </div>|
-        
     </div>
     
         
@@ -106,7 +104,7 @@
 
             
     <!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
-    <div id="modalCarri" class="modal fade " tabindex="-1">
+    <div id="modalCarri" class="modal fade" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -114,21 +112,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="modalListProducts">
-
-                        </tbody>
-                    
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col">Producto</th>
+                                    <th class="col">Cantidad</th>
+                                    <th class="col">Precio</th> 
+                                    <th class="col">Subtotal</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody id="modalListProducts">
+    
+                            </tbody>
+                        
+                        </table>
+                    </div>
                     <hr>
                     <p class="text-total">
                         <span>TOTAL =</span>
@@ -137,11 +137,12 @@
                 </div>
                 <div class="modal-footer">
                     <button id="btnClose" type="button" class="btn btn-secondary">Cerrar</button>
-                    <button id="btnSave"  type="submit" class="btn btn-success">Comprar</button>
+                    <button id="btnSave" type="submit" class="btn btn-success">Comprar</button>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <div class="row align-items-center" style="margin-bottom: 20px;">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
@@ -155,6 +156,8 @@
             <p>
         </div>
     </div>
+
+
 
 <!-- --------------------------- BOTON IR ARRIBA --------------------------- -->
 <a href="#" class="btn btn-warning">Ir Arriba <i class="fa-solid fa-turn-up"></i></a>
@@ -181,6 +184,7 @@
 
         </div>
     </div>
+    
 </footer>
 </body>
 </html>
