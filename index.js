@@ -249,7 +249,7 @@ const redenCart = (list) => {
     });
 };
 
-
+/* ------------------------- AGREGA UN PRODUCTO MAS ------------------------- */
     const addItemToCart = (e) => {
         const id = e.target.dataset.id;
         const product = products.find(item => item.id == id);
@@ -261,6 +261,7 @@ const redenCart = (list) => {
 
 };
 
+/* --------------------------- DISMINUYE UN PRODUCTO -------------------------- */
 const removeItemFromCart = (e) => {
     e.stopPropagation(); // Detener la propagación del evento
     const id = e.target.dataset.id;
@@ -272,7 +273,7 @@ const removeItemFromCart = (e) => {
 };
 
 
-
+/* --------------------------- ELIMINA EL PRODUCTO -------------------------- */
 const removeFromCart = (e) => {
     const id = e.target.dataset.id;
     Swal.fire({
@@ -311,9 +312,6 @@ const removeFromCart = (e) => {
     });
 };
 
-
-/* renderProducts(products);
- */
 
 /* ----------------------------- LUXON ---------------------------- */
 const f = new Date();
