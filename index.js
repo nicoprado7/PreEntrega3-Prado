@@ -264,12 +264,13 @@ const redenCart = (list) => {
 const removeItemFromCart = (e) => {
     e.stopPropagation(); // Detener la propagación del evento
     const id = e.target.dataset.id;
-    cart.removeProduct(id);
+    cart.decreaseProductCount(id); // Reduce la cantidad en una unidad
     const updatedList = cart.getProducts();
     redenCart(updatedList);
     cartCount.innerText = cart.getCount();
     cartSum.innerText = cart.getSum();
 };
+
 
 
 const removeFromCart = (e) => {

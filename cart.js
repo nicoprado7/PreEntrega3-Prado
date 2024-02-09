@@ -23,6 +23,20 @@ class Cart {
         }
     }
 
+    decreaseProductCount(id) {
+        const index = this.cart.findIndex(product => product.id == id);
+        if (index !== -1) {
+            if (this.cart[index].units > 1) {
+                this.cart[index].units -= 1; // Reduce la cantidad en una unidad
+            } else {
+                this.cart.splice(index, 1); // Elimina el producto si la cantidad es 1
+            }
+            localStorage.setItem('cart', JSON.stringify(this.cart));
+        }
+    }
+
+
+
     getProducts() {
         return this.cart;
     }
