@@ -28,8 +28,12 @@ cartCount.innerText = cart.getCount();
 const loadingIndicator = document.getElementById('loadingIndicator');
 btnModalCarrito.addEventListener('click', function () {
     const list = cart.getProducts();
-    
-    
+
+
+/* ------------------- CIERRA EL MODAL AL PRESIONAR CERRAR ------------------ */
+    btnClose.addEventListener('click', () => {
+        modal.hide(); // Oculta el modal al hacer clic en el botón de cerrar
+    });
 
 
 /* ------- VERIFICA SI EL CARRITO ESTA VACIO ANTES DE MOSTRAR EL MODAL ------ */
