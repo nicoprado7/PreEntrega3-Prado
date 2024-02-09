@@ -7,7 +7,7 @@ fetch("./productos.json")
         renderProducts(products);
     })
 
-const loadingIndicator = document.getElementById('loadingIndicator');
+
 const modal = new bootstrap.Modal('#modalCarri', {});
 const btnModalCarrito = document.querySelector('#btnModalCarrito');
 const cartCount = document.querySelector('#cartCount');
@@ -25,57 +25,56 @@ const cart = new Cart(listCart);
 
 cartCount.innerText = cart.getCount();
 
+const loadingIndicator = document.getElementById('loadingIndicator');
 btnModalCarrito.addEventListener('click', function () {
     const list = cart.getProducts();
     
     
+
+
 /* ------- VERIFICA SI EL CARRITO ESTA VACIO ANTES DE MOSTRAR EL MODAL ------ */
-if (list.length === 0) {
-    // Mostrar un mensaje de error
-    Swal.fire({
-        title: 'Carrito Vacio 😥',
-        text: 'Por favor, agregue productos antes de realizar una compra.',
-        icon: 'info',
-        confirmButtonColor: "#198754"
-    });
-} else {
-    // Mostrar indicador de carga
-    loadingIndicator.style.display = 'block';
+    if (list.length === 0) {
+        // Mostrar un mensaje de error
+        Swal.fire({
+            title: 'Carrito Vacio 😥',
+            text: 'Por favor, agregue productos antes de realizar una compra.',
+            icon: 'info',
+            confirmButtonColor: "#198754"
+        });
+    } else {
+          // Mostrar indicador de carga
+          loadingIndicator.style.display = 'block';
 
-    // Simular una operación asincrónica, por ejemplo, esperar 2 segundos
-    setTimeout(() => {
-        // Ocultar el indicador de carga después de que las operaciones asincrónicas hayan finalizado
-        loadingIndicator.style.display = 'none';
+          // Simular una operación asincrónica, por ejemplo, esperar 2 segundos
+          setTimeout(() => {
+              // Ocultar el indicador de carga después de que las operaciones asincrónicas hayan finalizado
+              loadingIndicator.style.display = 'none';
+  
+              cartSum.innerText = cart.getSum();
+              redenCart(list);
+              modal.show();
+          }, 2000);  // Modifica el tiempo según sea necesario o reemplázalo con tus operaciones asincrónicas reales.
+      }
+  });
 
-        cartSum.innerText = cart.getSum();
-        redenCart(list);
-        modal.show();
-    }, 1000);  // Modifica el tiempo según sea necesario o reemplázalo con tus operaciones asincrónicas reales.
-}
-});
-
-
-btnClose.addEventListener('click', () => {
-    modal.hide();// Cierra el modal al hacer clic en "cerrar"
-});
 btnSave.addEventListener('click', () => {
-    // Valida los datos ingresados en el formulario
+/* -------------- VALIDA LOS DATOS INGRESADOS EN EL FORMULARIO -------------- */
     const nombre = document.querySelector('#nombre').value;
     const email = document.querySelector('#email').value;
     const telefono = document.querySelector('#telefono').value;
     const direccion = document.querySelector('#direccion').value;
 
-    // Expresión regular para validar que el nombre solo contiene letras
+    // Validar que el nombre solo contiene letras
     const nombreRegex = /^[a-zA-ZáéíóúüÁÉÍÓÚÜ\s]+$/;
 
-    // Expresión regular para validar el formato de email
+    // Validar el formato de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Expresión regular para validar que el teléfono solo contiene números
+    //  Validar que el teléfono solo contiene números
     const telefonoRegex = /^\d+$/;
 
     if (nombre.trim() === '' || email.trim() === '' || telefono.trim() === '' || direccion.trim() === '') {
-        // Muestra un mensaje de error si hay campos vacíos
+    // Muestra un mensaje de error si hay campos vacíos
         Swal.fire({
             title: 'Error',
             text: 'Por favor, complete todos los campos',
@@ -83,7 +82,7 @@ btnSave.addEventListener('click', () => {
             confirmButtonColor: '#198754'
         });
     } else if (!nombre.match(nombreRegex)) {
-        // Muestra un mensaje de error si el nombre no contiene solo letras
+    // Muestra un mensaje de error si el nombre no contiene solo letras
         Swal.fire({
             title: 'Error',
             text: 'El nombre solo puede contener letras',
@@ -91,7 +90,7 @@ btnSave.addEventListener('click', () => {
             confirmButtonColor: '#198754'
         });
     } else if (!email.match(emailRegex)) {
-        // Muestra un mensaje de error si el email no tiene el formato correcto
+    // Muestra un mensaje de error si el email no tiene el formato correcto
         Swal.fire({
             title: 'Error',
             text: 'Por favor, ingrese un correo electrónico válido',
@@ -99,7 +98,7 @@ btnSave.addEventListener('click', () => {
             confirmButtonColor: '#198754'
         });
     } else if (!telefono.match(telefonoRegex)) {
-        // Muestra un mensaje de error si el teléfono no contiene solo números
+    // Muestra un mensaje de error si el teléfono no contiene solo números
         Swal.fire({
             title: 'Error',
             text: 'El teléfono solo puede contener números',
@@ -107,22 +106,22 @@ btnSave.addEventListener('click', () => {
             confirmButtonColor: '#198754'
         });
     } else {
-        // Realiza la compra
+    // Realiza la compra
         realizarCompra(nombre, email);
-        // Limpiar campos después de la compra
+    // Limpiar campos después de la compra
         document.querySelector('#nombre').value = '';
         document.querySelector('#email').value = '';
         document.querySelector('#telefono').value = '';
         document.querySelector('#direccion').value = '';
-        modal.hide();// Cierra el modal al hacer clic en "Comprar"
+/* --------------- CIERRA EL MODAL AL HACER CLICK EN "COMPRAR" -------------- */
+        modal.hide();
     }
 });
 
-// Función para realizar la compra
+
+
+/* --------------------- FUNCION PARA REALIZAR LA COMPRA -------------------- */
 const realizarCompra = (nombre, email,telefono,direccion) => {
-    // Simula el proceso de compra
-    // Aquí podrías enviar los datos del usuario y los productos comprados a un servidor para procesar la compra
-    
     // Muestra un mensaje de compra realizada exitosamente
     Swal.fire({
         title: "¡Gracias por su compra!",
@@ -134,17 +133,13 @@ const realizarCompra = (nombre, email,telefono,direccion) => {
         if (result.isConfirmed) {
             // Limpia el carrito
             cart.clearCart();
-            
             // Actualiza el contador del carrito a 0
             cartCount.innerText = 0;
         }
     });
 };
 
-
-
- 
-
+/* -------------------------- FILTRAR POR PRODUCTO -------------------------- */
 inputSearch.addEventListener('input', (event) => {
     const search = event.target.value;
     const newList = products.filter(product => product.name.toLowerCase().includes(search.toLowerCase()));
@@ -192,7 +187,7 @@ const renderProducts = (list, categoryFilter = null) => {
     });
 };
 
-/* -------------------------- FILTRAR POR CATEGORIA ------------------------- */
+/* -------------------------- FILTRAR POR CATEGORIA TODOS ------------------------- */
 selectCategory.addEventListener('change', (event) => {
     const selectedCategory = event.target.value;
     if (selectedCategory === "todos") {
@@ -212,11 +207,9 @@ const addToCart = (e) => {
         close: true,
         text: "Producto agregado al carrito",
         gravity: "bottom",
-/*         duration: 3000, */
         style: {
             background: "linear-gradient(to right,green, black)",
           },
-        
         }).showToast();
 };
 
@@ -230,7 +223,7 @@ const redenCart = (list) => {
                 <td>${product.name}</td>
                 <td>
                     <div class="input-group">
-                        <button class="btn btn-dark btnRemoveItem" data-id="${product.id}"><i class="fa-solid fa-minus"></i></button>
+                        <button class="btn btn-dark btnRemoveOneItem" data-id="${product.id}"><i class="fa-solid fa-minus"></i></button>
                         <input type="number" min="1" value="${product.units}" class="form-control inputUnits" disabled>
                         <button class="btn btn-dark btnAddItem" data-id="${product.id}"><i class="fa-solid fa-plus"></i></button>
                     </div>
@@ -239,10 +232,7 @@ const redenCart = (list) => {
                 <td>$${product.price * product.units}</td>
                 <td><button class="btn btn-dark btnRemoveItem" data-id="${product.id}"><i class="fa-solid fa-trash-can"></i></button></td>
             </tr>`;
-            
     });
-
-    
     const btnsRemove = document.querySelectorAll('.btnRemoveItem');
     btnsRemove.forEach(btn => {
         btn.addEventListener('click', removeFromCart);
@@ -252,7 +242,13 @@ const redenCart = (list) => {
     btnsAdd.forEach(btn => {
         btn.addEventListener('click', addItemToCart);
     });
+
+    const btnsDelete = document.querySelectorAll('.btnRemoveOneItem');
+    btnsDelete.forEach(btn => {
+        btn.addEventListener('click', removeItemFromCart);
+    });
 };
+
 
     const addItemToCart = (e) => {
         const id = e.target.dataset.id;
@@ -265,11 +261,19 @@ const redenCart = (list) => {
 
 };
 
+const removeItemFromCart = (e) => {
+    e.stopPropagation(); // Detener la propagación del evento
+    const id = e.target.dataset.id;
+    cart.removeProduct(id);
+    const updatedList = cart.getProducts();
+    redenCart(updatedList);
+    cartCount.innerText = cart.getCount();
+    cartSum.innerText = cart.getSum();
+};
+
 
 const removeFromCart = (e) => {
     const id = e.target.dataset.id;
-
-    // Mostrar el diálogo de confirmación
     Swal.fire({
         title: 'Está seguro de eliminar el producto?',
         icon: 'warning',

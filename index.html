@@ -23,18 +23,18 @@
      <!-- -------------------------------- LUXON -------------------------------- -->
      <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
      
-
+    <!-- -------------------------- FUENTES Y ESTILOS -------------------------- -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
- <!--    <link rel="stylesheet" href="styles1.css"> -->
     <link rel="shortcut icon" href="images/icon.png" type="image/x-png">
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<!--     <script src="data.js" defer></script> -->
+  
+     <!-- ---------------------------- JS LINKEADOS ----------------------------- -->
     <script src="cart.js" defer></script>
     <script src="index.js" defer></script>
+    
     <title>SHOP</title>
+
 </head>
 <body>
 
@@ -66,7 +66,7 @@
 </header>
  
 
-    <!-- ---------------------------- FILTROS ---------------------------- -->
+<!-- ---------------------------- FILTROS ---------------------------- -->
     <div class="row">
         <div class="col-md-2 animate__animated animate__bounceInLeft">
             <input id="inputSearch" type="search" class="form-control" placeholder="🔎Buscar...">
@@ -87,23 +87,18 @@
                 <span>Precio</span>
             </button>
 
-                     <!-- ------------------------------- CARRITO ------------------------------- -->
+<!-- ------------------------------- CARRITO ------------------------------- -->
  
-     <button id="btnModalCarrito" type="button" class="btn btn-danger animate__animated animate__bounceInLeft"> <!-- CARRITO -->
-        <i class="fa-solid fa-cart-shopping fa-xl"></i> <!-- Agrega la clase "fa-lg" para aumentar el tamaño del ícono -->
-        <span id="cartCount" class="badge text-bg-secondary fs-5">0</span> <!-- Agrega la clase "fs-5" para aumentar el tamaño del texto -->
+     <button id="btnModalCarrito" type="button" class="btn btn-danger animate__animated animate__bounceInLeft">
+        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+        <span id="cartCount" class="badge text-bg-secondary fs-5">0</span>
     </button>
-    
         </div>|
     </div>
-    
-        
-
     <div id="listProducts" class="row animate__animated animate__slideInUp">
     </div>
-
             
-    <!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
+<!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
     <!-- Detalle de compra y formulario -->
 <div id="modalCarri" class="modal fade" tabindex="-1">
     <div class="modal-dialog">
@@ -115,7 +110,8 @@
             <div class="modal-body">
            
 
-                <!-- Tabla de productos -->
+<!-- ------------------------- TABLA DE PRODUCTOS -------------------------- -->
+
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -127,7 +123,7 @@
                             </tr>
                         </thead>
                         <tbody id="modalListProducts">
-                            <!-- Aquí se renderizarán los productos del carrito -->
+                            <!-- Aca se renderizarán los productos del carrito -->
                         </tbody>
                     </table>
                 </div>
@@ -136,7 +132,8 @@
                     <span>TOTAL =</span>
                     <span>$<span id="cartSum"></span></span>
                 </p>
-                     <!-- Formulario de compra -->
+
+<!-- ------------------------ FORMULARIO DE COMPRA ------------------------- -->
                 <form id="formularioCompra">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre:</label>
@@ -165,7 +162,7 @@
 </div>
 
     
-
+<!-- -------------------- FOTO FINAL DE PAGINA Y TEXTO --------------------- -->
     <div class="row align-items-center" style="margin-bottom: 20px;">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
             <img src="./assets/foto eminem posando.jpg" class="img-fluid" alt="eminem posando" style="margin-bottom: 20px; border-radius: 25px;">
@@ -183,10 +180,6 @@
 
 <!-- --------------------------- BOTON IR ARRIBA --------------------------- -->
 <a href="#" class="btn btn-warning">Ir Arriba <i class="fa-solid fa-turn-up"></i></a>
-
-
-</div>
-
 
 
 <!-- ------------------------------- FOOTER -------------------------------- -->
@@ -209,16 +202,16 @@
 
         </div>
     </div>
-    
 </footer>
-
 </div>
 
+<!-- ------------------ LOADING AL HACER CLICK EN COMPRAR ------------------ -->
 <div id="loadingIndicator">
     <div class="loadingMessage">
-        <img src="./assets/eminem logo 1.pngc " alt="Cargando...">
+        <img src="./assets/eminem logo 1.png" alt="Cargando...">
     </div>
 </div>
 
 </body>
+
 </html>
