@@ -183,3 +183,39 @@ div.row{
   color: black;
 }
 
+
+@keyframes spin {
+  0% { transform: rotate(0deg); border-top-color: #198754; } /* Color inicial */
+  12.5% { border-top-color: #0d6efd; } /* Cambio de color en el 25% */
+  25% { border-top-color: #dc3545; } /* Cambio de color en el 50% */
+  37.5% { border-top-color: #ffc107; } /* Cambio de color en el 75% */
+  50% { border-top-color: #198754; } /* Vuelve al color inicial */
+  100% { transform: rotate(360deg); border-top-color: #198754; } /* Vuelve al color inicial */
+}
+
+#loadingIndicator {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Ajusta el ancho del indicador de carga según tus necesidades */
+  height: 200px; /* Ajusta el alto del indicador de carga según tus necesidades */
+  border: 20px solid rgba(0, 0, 0, 0.5); /* Ajusta el grosor y la opacidad del borde */
+  border-radius: 50%; /* Ajusta el radio de borde para que sea un círculo */
+  background-color: rgba(255, 255, 255, 0.9); /* Ajusta el color de fondo y su opacidad */
+  animation: spin 2s linear infinite; /* Cambia la duración de la animación a 5 segundos */
+}
+
+.loadingMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #198754; /* Color del texto */
+}
+.loadingMessage img {
+  width: 100px; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: 100px; /* Ajusta el alto de la imagen según tus necesidades */
+}

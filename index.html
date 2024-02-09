@@ -104,44 +104,66 @@
 
             
     <!-- ----------------------- DETALLE COMPRA CARRITO ------------------------ -->
-    <div id="modalCarri" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i> Detalle de compra </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Detalle de compra y formulario -->
+<div id="modalCarri" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fa-solid fa-cart-shopping"></i> Detalle de compra </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+           
+
+                <!-- Tabla de productos -->
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col">Producto</th>
+                                <th class="col">Cantidad</th>
+                                <th class="col">Precio</th> 
+                                <th class="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modalListProducts">
+                            <!-- Aquí se renderizarán los productos del carrito -->
+                        </tbody>
+                    </table>
                 </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="col">Producto</th>
-                                    <th class="col">Cantidad</th>
-                                    <th class="col">Precio</th> 
-                                    <th class="col">Subtotal</th>
-                                </tr>
-                            </thead>
-    
-                            <tbody id="modalListProducts">
-    
-                            </tbody>
-                        
-                        </table>
+                <hr>
+                <p class="text-total">
+                    <span>TOTAL =</span>
+                    <span>$<span id="cartSum"></span></span>
+                </p>
+                     <!-- Formulario de compra -->
+                <form id="formularioCompra">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" required>
                     </div>
-                    <hr>
-                    <p class="text-total">
-                        <span>TOTAL =</span>
-                        <span>$<span id="cartSum"></span></span>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button id="btnClose" type="button" class="btn btn-secondary">Cerrar</button>
-                    <button id="btnSave" type="submit" class="btn btn-success">Comprar</button>
-                </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Teléfono:</label>
+                        <input type="email" class="form-control" id="telefono" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Dirección:</label>
+                        <input type="email" class="form-control" id="direccion" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnClose" type="button" class="btn btn-secondary">Cerrar</button>
+                <button id="btnSave" type="submit" class="btn btn-success">Comprar</button>
             </div>
         </div>
     </div>
+</div>
+
     
 
     <div class="row align-items-center" style="margin-bottom: 20px;">
@@ -164,6 +186,9 @@
 
 
 </div>
+
+
+
 <!-- ------------------------------- FOOTER -------------------------------- -->
 <footer class="footer">
     <div class="container">
@@ -186,5 +211,14 @@
     </div>
     
 </footer>
+
+</div>
+
+<div id="loadingIndicator">
+    <div class="loadingMessage">
+        <img src="./assets/eminem logo 1.pngc " alt="Cargando...">
+    </div>
+</div>
+
 </body>
 </html>
